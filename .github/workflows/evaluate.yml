@@ -11,17 +11,13 @@ permissions:
   contents: write
   pull-requests: write
 
-concurrency:
-  group: leaderboard
-  cancel-in-progress: false
-
 jobs:
   evaluate:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout PR (submission files only, treated as DATA, never executed)
-      - name: Checkout PR branch (data only)
+      # 1. Checkout PR (submission only)
+      - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
@@ -37,7 +33,7 @@ jobs:
           ref: main
           path: main_repo
 
-      # 3. Checkout private labels repo (uses PAT)
+      # 3. Checkout private labels repo (FIXED: use PAT)
       - name: Checkout private labels
         uses: actions/checkout@v4
         with:
@@ -75,12 +71,10 @@ jobs:
           cp pr_repo/submission/*.enc main_repo/
           cp pr_repo/submission/*.enc.key main_repo/
 
-      # 7. Create private key file (secret passed via env)
+      # 7. Create private key file
       - name: Create private key
-        env:
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         run: |
-          printf '%s\n' "$PRIVATE_KEY" > private_key.pem
+          echo "${{ secrets.PRIVATE_KEY }}" > private_key.pem
           chmod 600 private_key.pem
 
       # 8. Decrypt submission
@@ -100,10 +94,10 @@ jobs:
             exit 1
           fi
 
-      # 9. Evaluate submission (credit the PR author)
+      # 9. Evaluate submission (FIXED filename)
       - name: Evaluate submission
         env:
-          GITHUB_ACTOR: ${{ github.event.pull_request.user.login }}
+          GITHUB_ACTOR: ${{ github.actor }}
         run: |
           cd main_repo
           python evaluate.py decrypted.csv ../private_data/daisee_groundTruth.csv
@@ -132,7 +126,6 @@ jobs:
             echo "No leaderboard changes"
           fi
 
-      # 12. Cleanup (always runs, removes key and decrypted data)
+      # 12. Cleanup
       - name: Cleanup
-        if: always()
-        run: rm -f private_key.pem main_repo/decrypted.csv
+        run: rm -f private_key.pem
