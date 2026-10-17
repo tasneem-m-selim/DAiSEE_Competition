@@ -45,7 +45,7 @@ The dataset is derived from the **DAiSEE** video dataset. Features were extracte
 | Classes           | 4 (`0`, `1`, `2`, `3`)                                                 |
 | Train videos      | 180                                                 |
 | Validation videos | 45                                            |
-| Test videos       | 76 (labels hidden)                                  |
+| Test videos       | 75 (labels hidden)                                  |
 
 ### Feature columns
 
