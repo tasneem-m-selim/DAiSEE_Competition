@@ -194,6 +194,7 @@ A starter notebook (`classify_video_features.ipynb`) with a simple **1D-CNN** in
 
 **Tasneem Selim**
 If you face issues with the repository or evaluation:
+
 - Contact me at tasneem.mselim@gmail.com
 
 ---
