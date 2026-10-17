@@ -150,6 +150,7 @@ Upload your `prediction.csv` to the submission folder in your forked repo.
 Submissions are evaluated using:
 
 * **Accuracy**
+* **F1-score**
 
 Evaluation is performed on a **hidden test set** to prevent data leakage.
 
@@ -159,14 +160,13 @@ Evaluation is performed on a **hidden test set** to prevent data leakage.
 
 * Any **deep learning** architecture (CNN, RNN/LSTM/GRU, Transformer, hybrid models)
 * Feature selection, preprocessing, and normalization
-* Padding / cropping / resampling of the frame sequences
 * Data augmentation
 * Hyperparameter tuning
 
 ## ❌ Not Allowed
 
 * Using test labels
-* Modifying test ids
+* Modifying test IDs
 * Training on test videos
 * Using the original DAiSEE labels or raw videos of the test set
 
@@ -192,12 +192,11 @@ A starter notebook (`classify_video_features.ipynb`) with a simple **1D-CNN** in
 
 ## 👩‍💻 Organizer
 
-**YOUR NAME**
-YOUR TITLE / AFFILIATION
+**Tasneem Selim**
 If you face issues with the repository or evaluation:
-- Contact me at YOUR_EMAIL
+- Contact me at tasneem.mselim@gmail.com
 
 ---
 
-Good luck, and happy learning 🚀
+Good luck, and happy coding 🚀
 
