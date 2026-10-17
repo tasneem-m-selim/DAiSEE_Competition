@@ -1,9 +1,4 @@
-# DAiSEE_Competition
-unbalanced dataset
-
-leaderboard https://tasneem-mselim.github.io/DAiSEE_Competition/
-
-# Video Engagement Classification Challenge (DAiSEE Features)
+# DAiSEE_Competition (Video Engagement Classification Challenge)
 
 ## 📌 Overview
 
@@ -13,11 +8,13 @@ This repository hosts the **Video Engagement Classification Challenge**, a deep 
 
 Each video is provided as a **sequence of ~300 frames with ~670 features per frame**, so models must learn temporal patterns from high-dimensional, noisy facial and gaze signals rather than from a single image.
 
+The dataset is unbalanced.
+
 ## 🏆 Leaderboard
 
 - Leaderboard scores are automatically updated based on accuracy.
 - View the live leaderboard:
-👉 **[Leaderboard](LEADERBOARD_LINK_HERE)**
+👉 **[Leaderboard](https://tasneem-mselim.github.io/DAiSEE_Competition/)**
 
 ---
 
