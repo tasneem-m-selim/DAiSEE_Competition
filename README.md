@@ -133,7 +133,7 @@ id,label
 
 Upload your `prediction.csv` to the submission folder in your forked repo.
 
-> If the competition uses encrypted submissions, first run:
+> To encrypted submissions, first run:
 > `python encrypt_submission.py prediction.csv prediction.enc public_key.pem`
 > and upload both `prediction.enc` and `prediction.enc.key` instead of the CSV.
 
