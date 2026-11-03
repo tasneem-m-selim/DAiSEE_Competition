@@ -1,5 +1,5 @@
 Team,Accuracy,F1-Score
-tasneem-m-selim,50.67,23.16
+qwen2.5-coder:32b,50.67,23.16
 qwen2.5-coder:14b,44.0,18.0
 qwen3:14b,42.67,16.29
 deepseek-r1:14b,42.67,14.95
