@@ -3,5 +3,6 @@ qwen2.5-coder:32b,50.67,23.16
 qwen2.5-coder:14b,44.0,18.0
 qwen3:14b,42.67,16.29
 deepseek-r1:14b,42.67,14.95
+tasneem-m-selim,40.0,23.28
 deepcoder:14b,30.67,15.25
 devstral-small-2:latest,5.33,2.53
